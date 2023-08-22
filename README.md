@@ -1,20 +1,24 @@
-# Classification -- Predicting Customer Churn
-
+# Classification Project -- Predicting Customer Churn
+## Telecommunication Company Churn Analysis
 ## Introduction
 
 Customer attrition is one of the biggest expenditures of any
 organization. Customer churn otherwise known as customer attrition or
 customer turnover is the percentage of customers that stopped using your
 company\'s product or service within a specified timeframe.\
-For instance, if you began the year with 500 customers but later ended
-with 480 customers, the percentage of customers that left would be 4%.
-If we could figure out why a customer leaves and when they leave with
-reasonable accuracy, it would immensely help the organization to
-strategize their retention initiatives manifold.
+Analysis and prediction of customer churn plays a crucial role in the success and growth of businesses, particularly those operating in subscription or service-oriented industries.
+Churn analysis promotes data driven decision making. It enables businesses to effectively assess their performance, identify trends, and adapt strategies based on empirical evidence.
 
-In this project, we aim to find the likelihood of a customer leaving the
+## Summary
+
+| Code      | Name        | Published Article |  Deployed App |
+|-----------|-------------|:-------------:|------:|
+| LP2  | Medium |  [https://medium.com/@benjaminkipkem/predicting-churn-analysis-35f2e675a035](/) | [Best Article Machine learning](/) |
+
+## Project Description
+In this project, I aim to find the likelihood of a customer leaving the
 organization, the key indicators of churn as well as the retention
-strategies that can be implemented to avert this problem.
+strategies that can be implemented to avert this problem. I will build and train ML models and tune the hyperparameters of the top performing models to predict customer attrition with more accuracy.
 
 ## Data Understanding
 
@@ -72,119 +76,121 @@ mailed check, Bank transfer(automatic), Credit card(automatic))
 
 **Churn** -- Whether the customer churned or not (Yes or No)
 
-## Instructions
+## Data Processing
+- **Importation of libraries:** I imported all the relevant libraries and modules necessary for the machine learning project.
+- **Cleaning of Data:** I cleaned my train and test data sets systemically based on domain knowledge. I filtered out a few outliers and Imputed missing values in the train set. I also checked data types in the columns and harmonized in both the train and testset.
+- **Creation of a Preprocessor:** This enabled encoding of categorical variables, Standardization and Scaling. It played a pivotal role in prepairing data for machine learning.
 
-Your task is to understand the data and prepare it for model building.
-Your analysis or methods should incorporate the following steps.
+## Data evaluation
+- Carried out vizualizations to deepen data understanding.
 
-1.  Hypothesis formation and Data Processing - Importing the relevant libraries and modules,
-    Cleaning of Data, Check data types, Encoding Data labels etc.
+ **Univariate Analysis**
 
-2.  Data Evaluation -- Perform bivariate and multivariate analysis, EDA
+![Alt text](Datasets/Visuals/02a5f692-8784-4f85-85cb-09e882eee384.png)
 
-See attached some useful resources \[ [Exploratory Data Analysis:
-Univariate, Bivariate, and Multivariate
-Analysis](https://www.enjoyalgorithms.com/blog/univariate-bivariate-multivariate-analysis)
-, [Univariate, Bivariate and Multivariate
-Analysis](https://youtu.be/w_Tm-H-emRo) , [Exploratory Data Analysis
-(EDA) Using Python](https://youtu.be/-o3AxdVcUtQ)\]
+![Alt text](Datasets/Visuals/53f60102-6970-4096-9877-26851a48ab66.png)
 
-3.  Build & Select Model -- Train Model on dataset and select the best
-    performing model.
+**Bivariate Analysis**
 
-4.  Evaluate your chosen Model.
+![Alt text](Datasets/Visuals/6f88e3e7-8fd1-4d85-96b7-913e9ff747b9.png)
 
-5.  Model Improvement.
 
-6.  Future Predictions.
+**Multivariate Analysis**
 
-7.  Key Insights and Conclusion.
+![Alt text](Datasets/Visuals/a6640fbb-c7e6-477d-b8d4-9b040507d877.png)
 
-Upon completion of your project, you are required to write a blog post
-on your thought process on medium, LinkedIn, personal blog, or any other
-suitable blogging site.
+## Hypothesis test
 
-## Rubrics
+✨ **NULL:** Contract type does not influence customer churn
 
-Hypothesis & Data Processing:
+✨ **ALTERNATE:** Contract type affects customer churn
 
--   **Excellent:** Stated hypothesis and asked relevant questions.
-    Import all relevant libraries and conduct all checks
-    to make the data ready for future Analysis.
+- based on chi-square test, we observe that the p-value is less than alpha, hence we reject Ho and conclude that is there is a statistical significance association between Churn and Contract.
 
--   **Good:** Stated hypothesis and implemented few steps to check
-    the quality of data.
 
--   **Fair:** Didn't perform adequate steps in preprocessing the data and also ignored hypothesis.
+## Business Questions
 
-**NB:** Quality checks should involve checking data types,
-missing values, and dealing with class imbalance.
+1. Does gender impact customer churn? Are there significant differences in churn rates between male and female customers?
 
-Data Evaluation:
+![Alt text](Datasets/Visuals/24d3dcec-fd9f-418b-8ad4-9b5aae52262f.png)
 
--   **Excellent:** Performed more than 5 bivariate and multivariate
-    analysis coupled with graphs to answer questions and hypothesis formed.
+2. Does the presence of a partner or dependents influence customer churn? Is there a relationship betweeen marital status and churn behavior?
 
--   **Good:** Performed few bivariate and multivariate analysis coupled
-    with graphs to answer some questions and hypothesis.
+![Alt text](Datasets/Visuals/7f4239c9-5c12-4a46-b58c-0857adec0eef.png)
 
--   **Fair:** Performed only 1 or 2 bivariate & multivariate analysis
-    but omitted key visuals like the correlation matrix.
+3.How does the length of tenure affect churn rates? Are customers with longer tenures less likely to churn compared to new customes?
 
-**[NB:]{.ul}** Visuals should check collinearity, churn rate,
-distributions etc.
+![Alt text](Datasets/Visuals/816faa75-2654-4d31-8004-e3fe01861ff9.png)
 
-Build and Select Model:
+4. What role do additional services(e.g., online security, tech support, streaming TV, etc.) play in reducing customer churn? Are customers with more services less likey to churn?
 
--   **Excellent:** Train 4 or more models and compare their combination
-    of accuracy, precision, recall and F1 & F2 scores.
+![Alt text](Datasets/Visuals/ff6ae33c-1f8f-442c-9fe6-d87dbc250b7f.png)
 
--   **Good:** Train less than 4 models and compare their accuracy,
-    precision, recall and F1 & F2 scores.
+5. Is there a correlation between the contract term (month-to-month, one year, two years) and churn rates? Are customers on long-term contracts less likely to churn compared to those on month-to-month contracts?
 
--   **Fair:** Train only 1 model and didn't compare any accuracy,
-    precision, recall and F1 & F2 scores.
+![Alt text](Datasets/Visuals/5ccdd7ee-57a9-4232-a268-022757e5864c.png)
 
-Evaluate Chosen model
+## Setup
+1. **Clone the repository:**
 
--   **Excellent:** Learner evaluates his/her model through k-Fold cross
-    validation and explains the rationale for doing so. The results are
-    further visualized on a graph.
+   git clone https://github.com/kaitany/Telecommunications-Churn-Analysis.git
 
--   **Good:** Learner only performed cross-validation with little
-    explanation.
+2. Navigate to the project directory:
+    cd Telecommunications-Churn-Analysis
 
--   **Fair:** Performed only cross validation on the model without
-    explaining the rationale behind.
+3. Install required dependencies:
+    pip install -r requirements.txt
 
-Model Improvement
+4. Download the dataset:
+    Download the Telco Churn datasets from the datasets folder and place it in the data directory. 
 
--   **Excellent:** Learner performed Hyperparameter tuning and explained
-    the concept into details.
+5. Run the analysis:
+    Depending on your preferred IDE or notebook environment, open and run the provided Jupyter Notebook or Python scripts. 
 
--   **Good:** Learner performed Hyperparameter tuning with little
-    explanation on the concept.
+6. Evaluate models:
+    After training and tuning models, evaluate them using the evaluation dataset. You can use the provided evaluation script or notebook.
 
--   **Fair:** Learner only performed Hyperparameter tuning.
+7. Export the best model:
+    If desired, export the best trained model using the provided export script.
 
-Future Predictions
+## App Execution
+To use the exported best model for predictions:
+1. Load the exported model:
+In your Python script or notebook, load the saved model using pickle:
+import pickle
 
--   **Excellent:** Predicted on test sets and visualized the results via
-    Confusion Matrix with detailed explanation of Confusion Matrix
-    visual.
+with open('export/customer_churn_model.pkl', 'rb') as f:
+    best_model = pickle.load(f)
 
--   **Good:** Predicted on test data and only visualized on Confusion
-    Matrix without any explanation of the graph.
+2. Make predictions:
+Use the loaded model to make predictions on new data:
+new_data = ...  # Prepare your new data
+predictions = best_model.predict(new_data)
 
--   **Fair:** Only predicted on test data.
+## Conclusions 
 
-Key Insights and Conclusion
+Gradient Boost Classifier emerged as the best model for overall performance in predicting customer churn. This model outperforms the rest in terms of accuracy, precision, recall and F1 score.
 
--   **Excellent:** Provide a vivid conclusion on the process by
-    providing 5 or more key insights from the analysis, challenges, and
-    the way forward.
+## Key Insights :chart_with_upwards_trend:
 
--   **Good:** Gave a conclusion by providing two of either key insights,
-    challenges, and way forward.
+✨ Customer churn rate decreases with an increase in tenure :chart_with_upwards_trend:
 
--   **Fair:** Provided only key insights as conclusion.
+✨ Availability of additional services plays a crucial role in reducing customer churn :chart_with_upwards_trend:
+
+✨ customers on long-term contracts are less likely to churn compared to those on month-to-month contracts :chart_with_upwards_trend:
+
+
+## Appreciation
+-   I highly recommend Azubi Africa for their comprehensive and effective programs. Read More articles about https://medium.com/@azubiafrica and take a few minutes to visit this link to learn more about Azubi Africa life-changing https://bit.ly/41CGCwK
+
+-  **Tags**
+
+https://bit.ly/3ARq742
+
+## Author
+`Benjamin Kaitany`
+
+`Data Analyst`
+
+`Azubi Africa` 
+
