@@ -11,9 +11,12 @@ Churn analysis promotes data driven decision making. It enables businesses to ef
 
 ## Summary
 
+
 | Code      | Name        | Published Article |  Deployed App |
 |-----------|-------------|:-------------:|------:|
 | LP2  | Medium |  [https://medium.com/@benjaminkipkem/predicting-churn-analysis-35f2e675a035](/) | [Best Article Machine learning](/) |
+| LP2     | Power Bi        | https://app.powerbi.com/links/dsWSbDhr51?ctid=4487b52f-f118-4830-b49d-3c298cb71075&pbi_source=linkShare&bookmarkGuid=f8c9eb1b-65d2-4482-893e-90e63959bb4f |  Interactive Power Bi |
+
 
 ## Project Description
 In this project, I aim to find the likelihood of a customer leaving the
@@ -78,7 +81,7 @@ mailed check, Bank transfer(automatic), Credit card(automatic))
 
 ## Data Processing
 - **Importation of libraries:** I imported all the relevant libraries and modules necessary for the machine learning project.
-- **Cleaning of Data:** I cleaned my train and test data sets systemically based on domain knowledge. I filtered out a few outliers and Imputed missing values in the train set. I also checked data types in the columns and harmonized in both the train and testset.
+- **Cleaning of Data:** I cleaned my train and test data sets systemically based on domain knowledge. I filtered out a few outliers and Imputed missing values in the train set. I found some different data types in the columns and harmonized them in both the train and testset.
 - **Creation of a Preprocessor:** This enabled encoding of categorical variables, Standardization and Scaling. It played a pivotal role in prepairing data for machine learning.
 
 ## Data evaluation
